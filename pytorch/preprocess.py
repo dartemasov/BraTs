@@ -5,13 +5,13 @@ import numpy as np
 import nibabel as nib
 from sklearn.preprocessing import LabelBinarizer
 
-IMG_ROOT = './Task01_BrainTumor/imagesTr'
-IMG_PATH = './Task01_BrainTumor/imagesTr/BRATS_148.nii.gz'
-IMG_OUTPUT_ROOT = './train/image_T1'
+IMG_ROOT = './data/images'
+IMG_PATH = './data/images/BraTS2021_00000/BraTS2021_00000_t1.nii.gz'
+IMG_OUTPUT_ROOT = './data/train/image_T1'
 
-LABEL_ROOT = './Task01_BrainTumor/labelsTr'
-IABEL_PATH = './Task01_BrainTumor/labelsTr/BRATS_148.nii.gz'
-LABEL_OUTPUT_ROOT = './train/label'
+LABEL_ROOT = './data/images'
+LABEL_PATH = './data/images/BraTS2021_00000/BraTS2021_00000_tseg.nii.gz'
+LABEL_OUTPUT_ROOT = './data/train/label'
 
 L0 = 0      # Background
 L1 = 50     # Necrotic and Non-enhancing Tumor
@@ -111,10 +111,10 @@ for path in os.listdir(IMG_ROOT):
     if path[0] == '.':
         continue
     nii2jpg_img(os.path.join(IMG_ROOT,path), IMG_OUTPUT_ROOT)
-'''
+
 for path in os.listdir(LABEL_ROOT):
     print(path)
     if path[0] == '.':
         continue
     nii2jpg_label(os.path.join(LABEL_ROOT,path), LABEL_OUTPUT_ROOT)
-'''
+

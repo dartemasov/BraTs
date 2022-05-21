@@ -1,0 +1,6 @@
+*.pyc
+*.pt
+*.h5
+.ipynb_checkpoints
+data/
+data.zip
